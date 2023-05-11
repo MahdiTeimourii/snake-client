@@ -1,4 +1,5 @@
 const net = require("net");
+const { IP, PORT } = require("./constants");
 const handleUserInput = function (key) {
   if (key === '\u0003') { // Check for Ctrl+C input
     process.exit(); // Terminate the game
@@ -8,8 +9,8 @@ const handleUserInput = function (key) {
 // Establishes a connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: '172.26.131.s90',
-    port: 50541,
+    host: IP,
+    port: PORT,
   });
 
   conn.on('connect', () => {
