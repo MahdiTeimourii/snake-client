@@ -20,6 +20,8 @@ stdin.on("data", (key) => {
     console.log("Move: down");
   } else if (key === "d") {
     console.log("Move: right");
+  } else if (key === "g") {
+    connection.write("HOLA!");
   } else if (key === "\u0003") {
     process.exit(); // Terminate the game on Ctrl+C input
   }
